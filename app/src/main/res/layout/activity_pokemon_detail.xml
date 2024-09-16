@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground">
 
+    <!-- Nombre del Pokémon -->
     <TextView
         android:id="@+id/tvPokemonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
 
+    <!-- Tipo del Pokémon -->
     <TextView
         android:id="@+id/tvPokemonType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/textSecondary"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
+
+    <!-- Mapa -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"/>
 
 </LinearLayout>

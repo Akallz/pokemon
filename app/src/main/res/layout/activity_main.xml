@@ -7,12 +7,27 @@
     tools:context=".MainActivity"
     android:background="@color/black">
 
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista de Pokémon"
+        android:textSize="24sp"
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="16dp"
+        android:background="@color/black"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"/>
+
     <!-- RecyclerView para mostrar la lista de Pokémon -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPokemon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_marginTop="64dp"/> <!-- Ajuste el margen superior para no solaparse con el título -->
 
     <!-- FloatingActionButton en la parte inferior derecha -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,9 +38,9 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_add_botton"
         app:fabCustomSize="100dp"
-        android:backgroundTint="@color/black"
-        app:maxImageSize="100dp"
-        android:contentDescription="Agregar Pokemon"
+        android:backgroundTint="#00000000"
+        app:maxImageSize="80dp"
+        android:contentDescription="Agregar Pokémon"
         android:tint="@android:color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,23 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground">
 
+    <!-- Nombre del Pokémon -->
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_margin="8dp"
-        />
+        android:textSize="22sp"
+        android:textColor="@color/textPrimary"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginBottom="4dp"
+        android:ellipsize="end"
+        android:maxLines="1" />
 
+    <!-- Tipo del Pokémon -->
     <TextView
         android:id="@+id/tvType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_margin="8dp"
-        android:layout_marginTop="1dp"
-        />
+        android:textSize="16sp"
+        android:textColor="@color/textSecondary"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:maxLines="1" />
 
 </LinearLayout>
