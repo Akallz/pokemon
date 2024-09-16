@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@color/black">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnCreateContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp" />
-
+    <!-- RecyclerView para mostrar la lista de Pokémon -->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPokemon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rvPokemon" />
+        android:padding="16dp" />
 
-</RelativeLayout>
+    <!-- FloatingActionButton en la parte inferior derecha -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_botton"
+        app:fabCustomSize="100dp"
+        android:backgroundTint="@color/black"
+        app:maxImageSize="100dp"
+        android:contentDescription="Agregar Pokemon"
+        android:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

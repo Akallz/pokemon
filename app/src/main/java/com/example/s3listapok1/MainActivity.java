@@ -1,5 +1,6 @@
 package com.example.s3listapok1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -8,10 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.s3listapok1.activities.CreatePokemonActivity;
 import com.example.s3listapok1.adapters.PokemonAdaptar;
 import com.example.s3listapok1.entities.ApiClient;
 import com.example.s3listapok1.entities.Pokemon;
 import com.example.s3listapok1.interfaces.PokemonApiService;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +33,17 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rvPokemon = findViewById(R.id.rvPokemon);
         rvPokemon.setLayoutManager(new LinearLayoutManager(this));
 
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        fab.setOnClickListener(
+                v -> {
+                    Intent intent = new Intent(MainActivity.this,CreatePokemonActivity.class);
+                    startActivity(intent);
+                }
+        );
         // Cliente Retrofit y la interfaz
 
         PokemonApiService apiService = ApiClient.getClient().create(PokemonApiService.class);
-
 
         // Llamada a la API
 
@@ -57,16 +67,5 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Fallo en la conexion",Toast.LENGTH_SHORT).show();
             }
         });
-
-        List<Pokemon> elementos = new ArrayList<>();
-        elementos.add(new Pokemon("Pikachu","Rayo"));
-        elementos.add(new Pokemon("Bulbasaur","Planta "));
-        elementos.add(new Pokemon("Charmander","Fuego"));
-        elementos.add(new Pokemon("Squirtle","Agua"));
-        elementos.add(new Pokemon("Gyarados","Agua"));
-
-
-        PokemonAdaptar adaptar = new PokemonAdaptar(elementos);
-        rvPokemon.setAdapter(adaptar);
     }
 }
